@@ -60,6 +60,7 @@ Compilation:
 
     qmake
     make
+    sudo make install
 
 
 Todo:

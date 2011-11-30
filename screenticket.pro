@@ -31,10 +31,10 @@ SOURCES =   main.cpp \
 FORMS =     mainwindowbase.ui
 
 
+DESTDIR = $$(PWD)
 
-target.path = $$[QT_INSTALL_EXAMPLES]/screenticket
-sources.path = $$[QT_INSTALL_EXAMPLES]/screenticket
+target.path = /usr/bin/
 
 sources.files = $$SOURCES $$HEADERS $$RESOURCES *.pro
-INSTALLS += target sources
+INSTALLS += target
 
