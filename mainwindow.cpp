@@ -47,10 +47,17 @@ void MainWindow::setFileToWatch(QString fileName)
     if (!fileName.isEmpty()) {
         m_fileToWatch = fileName;
 
-        m_watcher = new QFileSystemWatcher(this);
-	m_watcher->addPath(m_fileToWatch);
+	/// 
+	QFile file;
+	if ( file.exists(fileName) ) {
+
+	    m_watcher = new QFileSystemWatcher(this);
+	    m_watcher->addPath(m_fileToWatch);
     
-        connect(m_watcher, SIGNAL(fileChanged(const QString)), this, SLOT(ticketPrinterFileChanged(const QString)));
+            connect(m_watcher, SIGNAL(fileChanged(const QString)), this, SLOT(ticketPrinterFileChanged(const QString)));
+	} else {
+	    mui_ticket->setHtml("<b>Error:</b> File not found.");
+        } // end if
     
     } // end if
 }

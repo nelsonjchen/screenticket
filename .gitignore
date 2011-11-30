@@ -1,0 +1,5 @@
+Makefile
+*.o
+ui_*.h
+moc_*.cpp
+screenticket
