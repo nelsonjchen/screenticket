@@ -1,0 +1,82 @@
+/********************************************************************************
+*                                                                               *
+*    ScreenTicket. Copyright (C) 2011 Todo-Redes. <http://www.todo-redes.com>   *
+*    Fco. Javier M. C. <fcojavmc@todo-redes.com>                                *
+*                                                                               *
+*    This file is part of ScreenTicket.                                         *
+*                                                                               *
+*    ScreenTicket is free software: you can redistribute it and/or modify       *
+*    it under the terms of the GNU General Public License as published by       *
+*    the Free Software Foundation, either version 3 of the License, or          *
+*    (at your option) any later version.                                        *
+*                                                                               *
+*    ScreenTicket is distributed in the hope that it will be useful,            *
+*    but WITHOUT ANY WARRANTY; without even the implied warranty of             *
+*    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the               *
+*    GNU General Public License for more details.                               *
+*                                                                               *
+*    You should have received a copy of the GNU General Public License          *
+*    along with ScreenTicket. If not, see <http://www.gnu.org/licenses/>.       *
+*                                                                               *
+*********************************************************************************/
+
+
+ScreenTicket.
+-------------
+
+ScreenTicket is a ESC/POS ticket printer emulator, for GNU/Linux, to show tickets on screen to avoid wasting paper when you
+are testing any Point of Sale software.
+
+It's writing in C++ with Qt library.
+
+
+The printing system used in GNU/Linux is CUPS. To use ScreenTicket you need to create a new "raw" printer and redirect it
+to a file (e.g. /tmp/printer1.prn). Previously, you need to configure CUPS to allow this behaviour:
+
+Edit /etc/cups/cupsd.conf and add this directive:
+
+    FileDevice Yes
+
+
+Save and restart CUPS to take effect.
+
+
+Current version:
+----------------
+
+    1.0.0
+
+
+Dependencies:
+-------------
+
+You need the following Software to compile the source code:
+
+    Qt 4.7+
+
+
+Compilation:
+------------
+
+    qmake
+    make
+
+
+Todo:
+-----
+
+Now only shows text without format. Enough for testing, but improvements in WYSIWYG behaviour is the next objective.
+
+
+Usage:
+------
+
+screenticket --file=<file> [--title=<title>]
+
+Arguments:
+  --file=FILE       File to monitor, like CUPS printer redirected to this file.
+  --title=TITLE     Title to show at the top of the GUI layout.
+  --version         Shows the version of the program.
+  --help            Shows this help text.
+
+
