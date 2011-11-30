@@ -45,7 +45,7 @@
     <item>
      <widget class="QPushButton" name="mui_quit">
       <property name="text">
-       <string>&amp;Salir</string>
+       <string>&amp;Quit</string>
       </property>
      </widget>
     </item>
