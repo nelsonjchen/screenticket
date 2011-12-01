@@ -26,6 +26,7 @@
 #include <QtGui>
 #include <QMainWindow>
 #include <QFileSystemWatcher>
+#include <QList>
 
 class MainWindow;
 
@@ -42,6 +43,7 @@ private:
     QString m_printerTitle;
     QString m_cupsPrinter;
     QString convertEscPosToQString(QByteArray blob);
+    QList<QString> m_tags;
 
 public:
     MainWindow( QWidget * parent = 0 );

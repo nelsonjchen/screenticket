@@ -34,7 +34,7 @@
 int main(int argc, char * argv[])
 {
     int r = 0;
-
+    
     try {
 
         QApplication app(argc, argv);

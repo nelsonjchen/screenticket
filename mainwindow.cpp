@@ -108,7 +108,7 @@ QString MainWindow::convertEscPosToQString(QByteArray blob)
 	{
 	  
 	    case 0x09: /// Horizontal tab
-		c = blob[i];
+		result.append("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
 		break;
 
 	    case 0x0a: /// Line feed
@@ -195,7 +195,15 @@ QString MainWindow::convertEscPosToQString(QByteArray blob)
 			
 		    case 0x2d: /// Specify/cancels underline mode
 			i++;
-			c = blob[i];
+			/// Mira si <u> existe en la lista. Si existe se cierra y se elimina de la lista.
+			/// En caso contrario se abre la etiqueta y se registra en la lista de tags abiertas.
+			if (m_tags.lastIndexOf("<u>") != -1) {
+			    m_tags.erase( m_tags.begin() + m_tags.lastIndexOf("<u>") );
+			    result.append("</u>");
+			} else {
+			    m_tags.push_back(QString("<u>"));
+			    result.append("<u>");
+			} // end if
 			break;
 			
 		    case 0x32: /// Set default line spacing
