@@ -444,7 +444,7 @@ QString MainWindow::convertEscPosToQString(QByteArray blob)
 			    case 1:
 			    case 48:
 			    case 49:
-				result.append("<hr /");
+				result.append("<hr />");
 				break;
 			  
 			    /// Cut paper
@@ -452,7 +452,7 @@ QString MainWindow::convertEscPosToQString(QByteArray blob)
 			    case 66:
 				i++;
 				c = blob[i]; /// n
-				result.append("<hr /");
+				result.append("<hr />");
 				break;
 			} // end switch
 			break;
