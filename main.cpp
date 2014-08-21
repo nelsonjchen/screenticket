@@ -64,7 +64,7 @@ int main(int argc, char * argv[])
 	
 	    if (rxVersion.indexIn(args.at(i)) != -1 ) {
 		QString version = QString("ScreenTicket v.") + QString(PROGRAM_VERSION) + QString("\n\n");
-		fprintf(stdout, version.toAscii());
+        fprintf(stdout, version.toLatin1());
 		fprintf(stdout, "Copyright (C) 2011 Todo-Redes <http://www.todo-redes.com>.\n");
 		fprintf(stdout, "Fco. Javier M. C. <fcojavmc@todo-redes.com>\n");
 		fprintf(stdout, "License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.\n");

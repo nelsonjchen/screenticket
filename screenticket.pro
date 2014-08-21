@@ -38,3 +38,4 @@ target.path = /usr/bin/
 sources.files = $$SOURCES $$HEADERS $$RESOURCES *.pro
 INSTALLS += target
 
+QT += widgets
